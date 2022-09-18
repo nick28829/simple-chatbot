@@ -1,0 +1,7 @@
+fuzzywuzzy
+gensim
+nltk
+numpy
+python-Levenshtein
+pyyaml
+sklearn

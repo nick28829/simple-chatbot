@@ -1,0 +1,44 @@
+general_responses:
+  fallback_response: I'm sorry, but I didn't understand that.
+  greeting: "Hello there, I'm a simple Chatbot, supposed to act as Nicklas' CV, how can I help you?<br/>
+    <br/>
+    Some simple things I can do are:<br/>
+    - telling you about Nicklas' previous work experience<br/>
+    - tell you about his academic career<br/>
+    - give you some examples on projects he's worked on<br/>
+    - hook you up with him if you have any job offerings ;)"
+  conversation_stimulus: Do you have any other questions or would like to get in touch with Nicklas?
+intents:
+  - name: getJobOverview
+    example_phrases:
+      - Job information
+      - Job history
+      - Where has he worked in the past
+      - What relevant work experience does Nicklas have
+    response: "Here is an overview over his past jobs:<br/>
+      TODO
+      "
+  - name: getJobDetails
+    example_phrases:
+      - What has he done at $company
+      - What were his responsibilities at $company
+      - What was his role at $company
+      - Can you tell me more about his work at $company
+    response: "At $company, his job consisted of the following projects: $projects"
+    parameters: 
+      - name: company
+        values: 
+        - nebumnind
+        - biz factory
+        - principia mentis
+        follow_up: Which company interests you?
+    data:
+      - parameters:
+          company: nebumnind
+        data:
+          projects: add projects here
+      - parameters:
+          company: principia mentis
+        data:
+          company: principia mentis
+          projects: add projects here

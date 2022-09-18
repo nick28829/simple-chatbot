@@ -1,0 +1,111 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: darkslategray;
+}
+
+h1 {
+  color: darkslategray;
+}
+
+.base-container {
+  margin: auto;
+  max-width: 900px;
+}
+
+.chat {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: rgb(240, 240, 240);
+  min-width: 500px;
+  max-width: 800px;
+}
+
+.chat-field {
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.chat-messages {
+  min-width: 500px;
+  max-width: 800px;
+  height: 300px;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+}
+
+.chat-messages > div:last-child {
+  scroll-snap-align: start;
+}
+
+.chat-send-button {
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.message {
+  display: flex;
+}
+
+.message p {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.message-sent {
+  justify-content: end;
+}
+
+.message-sent p {
+  background-color: aquamarine;
+}
+
+.message-received {
+  justify-content: start;
+}
+
+.message-received p {
+  background-color: darkkhaki;
+}
+
+.react-link {
+  display: flex;
+  justify-content: end;
+}
+
+.react-link a {
+  margin-left: 2px;
+  text-decoration: none;
+}
+
+.spacing {
+  height: 100px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-links ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline;
+}
+
