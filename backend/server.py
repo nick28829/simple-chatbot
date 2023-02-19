@@ -1,8 +1,13 @@
 from aiohttp import web
 
+# necessary to load bot
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
+
 from src.bot import Bot, Context, load_w2v
 
-async def home(request):
+async def home(request: web.Request) -> web.Response:
     return web.FileResponse('../frontend/build/index.html')
 
 async def bot_endpoint(request: web.Request) -> web.Response:
@@ -17,6 +22,7 @@ async def bot_endpoint(request: web.Request) -> web.Response:
 
 @web.middleware
 async def cors_middleware(request, handler):
+    # only necessary for running frontend in development mode
     response = await handler(request)
     response.headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:3000'
     response.headers['Access-Control-Allow-Methods'] = '*'
