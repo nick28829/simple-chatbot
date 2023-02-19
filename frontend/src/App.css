@@ -26,7 +26,7 @@ h1 {
   flex-direction: column;
   border-radius: 20px;
   background-color: rgb(240, 240, 240);
-  min-width: 500px;
+  min-width: 300px;
   max-width: 800px;
 }
 
@@ -36,9 +36,9 @@ h1 {
 }
 
 .chat-messages {
-  min-width: 500px;
+  min-width: 300px;
   max-width: 800px;
-  height: 300px;
+  height: 70lvh;
   overflow-y: scroll;
   overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
@@ -54,6 +54,7 @@ h1 {
   padding: 5px;
   font-size: 14px;
   background-color: white;
+  cursor: pointer;
 }
 
 .message {
@@ -70,7 +71,7 @@ h1 {
 }
 
 .message-sent p {
-  background-color: aquamarine;
+  background-color: darkseagreen;
 }
 
 .message-received {
@@ -78,7 +79,7 @@ h1 {
 }
 
 .message-received p {
-  background-color: darkkhaki;
+  background-color: beige;
 }
 
 .react-link {
