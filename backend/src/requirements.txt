@@ -4,4 +4,4 @@ nltk
 numpy
 python-Levenshtein
 pyyaml
-sklearn
+scikit-learn
