@@ -1,6 +1,7 @@
 general_responses:
-  fallback_response: I'm sorry, but I didn't understand that.
-  greeting: "Hello there, I'm a simple Chatbot, supposed to act as Nicklas' CV, how can I help you?<br/>
+  fallback_response: "I'm sorry, but I'm not sure how to help you. I might not yet understand everything,
+    so maybe try framing it differently or provide another command."
+  greeting: "Hello there! I'm a simple Chatbot, supposed to act as Nicklas' CV, how can I help you?<br/>
     <br/>
     Some simple things I can do are:<br/>
     - telling you about Nicklas' previous work experience<br/>
@@ -9,6 +10,10 @@ general_responses:
     - hook you up with him if you have any job offerings ;)"
   conversation_stimulus: Do you have any other questions or would like to get in touch with Nicklas?
 intents:
+  - name: easterEggStarWars
+    example_phrases:
+      - Hello there
+    response: General Kenobi...
   - name: getJobOverview
     example_phrases:
       - Job information
@@ -16,29 +21,66 @@ intents:
       - Where has he worked in the past
       - What relevant work experience does Nicklas have
     response: "Here is an overview over his past jobs:<br/>
-      TODO
-      "
+      - 2020 - 2021: Biz Factory <br/>
+      - 2021 - 2022: Nebumind <br/>
+      - 2022 - now: Principia Mentis"
+  - name: getAcademicOverview
+    example_phrases:
+      - academic information
+      - academic history
+      - what has he studied
+      - where did he study
+      - what is his academic background
+    response: "He is currently enrolled at the Munich University of Applied Sciences in
+    the Bachelor's Data Science & Scientific Computing and will finish in 2023. After that,
+    he is planning to do his Master's extra-occupational in Computer Linguistics."
   - name: getJobDetails
     example_phrases:
       - What has he done at $company
       - What were his responsibilities at $company
       - What was his role at $company
       - Can you tell me more about his work at $company
-    response: "At $company, his job consisted of the following projects: $projects"
+    response: "At $company, his job consisted of the following projects: <br/> $projects"
     parameters: 
       - name: company
         values: 
-        - nebumnind
+        - nebumind
         - biz factory
         - principia mentis
         follow_up: Which company interests you?
     data:
       - parameters:
-          company: nebumnind
+          company: nebumind
         data:
-          projects: add projects here
+          company: Nebumind
+          projects: "
+          - develop an application that could track the status and activities of various
+          sensors in a production plant <br/>
+          - build the web interface for an import tool"
       - parameters:
           company: principia mentis
         data:
-          company: principia mentis
-          projects: add projects here
+          company: Principia Mentis
+          projects: "
+          - setup a data pipeline for collection from both frontend and backend <br/>
+          - create dashboards to visualize relevant customer data <br/>
+          - add data-driven features <br/>
+          - develop a notification system for the pipeline status <br/>
+          - work on a search engine"
+      - parameters:
+          company: biz factory
+        data:
+          company: Biz Factory
+          projects: "
+          - develop the database layer for an individual software <br/>
+          - implement 2 factor authentication for a Django application
+          - server administration multiple servers, including those of a bavarian ministry"
+  - name: getInTouch
+    example_phrases:
+      - I would like to get in touch with him
+      - I want to contact him
+      - can you get me his contact info
+      - can you hook me up with him
+    response: "You can write him an email to <a hre=\"mailto:nicklas@bocksberger.com\">
+      nicklas@bocksberger.com</a> or send him a connection request on 
+      <a href=\"https://www.linkedin.com/in/nicklas-bocksberger-8b23b8154/\">LinkedIn</a>."
